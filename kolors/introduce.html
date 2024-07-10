@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://siliconflow.github.io/BizyAir/controlnet-preprocessing/others.html">
+        <link rel="canonical" href="https://siliconflow.github.io/BizyAir/kolors/introduce.html">
       
       <link rel="icon" href="../assets/bizyair.svg">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>Others - BizyAir Documentation</title>
+        <title>Kolors - BizyAir Documentation</title>
       
     
     
@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kolors" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Others
+              Kolors
             
           </span>
         </div>
@@ -192,10 +197,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../kolors/introduce.html" class="md-tabs__link">
+    <a href="introduce.html" class="md-tabs__link md-tabs__link--active">
       Kolors
     </a>
   </li>
@@ -320,11 +327,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../kolors/introduce.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="introduce.html" class="md-nav__link md-nav__link--active">
         Kolors
       </a>
+      
     </li>
   
 
@@ -336,19 +353,49 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/siliconflow/BizyAir/blob/master/docs/controlnet-preprocessing/others.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/siliconflow/BizyAir/blob/master/docs/kolors/introduce.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Others</h1>
-                
-                
+                <h1 id="kolors">Kolors<a class="headerlink" href="#kolors" title="Permanent link">&para;</a></h1>
+<p>Kolors is a large-scale text-to-image generation model based on latent diffusion, developed by the Kuaishou Kolors team.</p>
+<p>You can find more about Kolors at <a href="https://huggingface.co/Kwai-Kolors/Kolors">Kwai-Kolors/Kolors</a>.</p>
+<p>BizyAir offers 5 nodes related to Kolors, each serving for:</p>
+<ul>
+<li>Kolors Sampler</li>
+<li>Text encoding</li>
+<li>VAE decoding</li>
+<li>VAE encoding</li>
+</ul>
+<p>Here is an example of a text-to-image workflow using Kolors:</p>
+<p><img alt="" src="imgs/bizyair_kolors_txt2img.png" /></p>
+<p>Here is an example of a image-to-image workflow using Kolors:</p>
+<p><img alt="" src="imgs/bizyair_kolors_img2img.png" /></p>
+<p>The nodes provided by BizyAir are compatible with the nodes provided by (ComfyUI-KwaiKolorsWrapper)[<a href="https://github.com/kijai/ComfyUI-KwaiKolorsWrapper">https://github.com/kijai/ComfyUI-KwaiKolorsWrapper</a>], allowing you to freely combine them.</p>
+<p>Enjoy.</p>
                 
               
               
@@ -369,6 +416,26 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../getting-started/quick-start.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Quick Start" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Quick Start
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
