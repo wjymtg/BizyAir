@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://siliconflow.github.io/BizyAir/kolors/introduce.html">
+        <link rel="canonical" href="https://siliconflow.github.io/BizyAir/controlnet-preprocessor/introduce.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>Kolors - BizyAir Nodes</title>
+        <title>BizyAir ControlNet Auxiliary Preprocessors - BizyAir Nodes</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kolors" class="md-skip">
+        <a href="#bizyair-controlnet-auxiliary-preprocessors" class="md-skip">
           跳转至
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kolors
+              BizyAir ControlNet Auxiliary Preprocessors
             
           </span>
         </div>
@@ -198,12 +198,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="introduce.html" class="md-tabs__link md-tabs__link--active">
+    <a href="../kolors/introduce.html" class="md-tabs__link">
       Kolors
     </a>
   </li>
@@ -341,21 +339,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="introduce.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../kolors/introduce.html" class="md-nav__link">
         Kolors
       </a>
-      
     </li>
   
 
@@ -394,6 +382,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#line-extractors" class="md-nav__link">
+    Line Extractors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t2i-adapter-only" class="md-nav__link">
+    T2I-Adapter Only
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-segmentation" class="md-nav__link">
+    Semantic Segmentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-and-depth-estimators" class="md-nav__link">
+    Normal and Depth Estimators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#face-and-pose-estimators" class="md-nav__link">
+    Face and Pose Estimators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tile" class="md-nav__link">
+    Tile
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -404,27 +442,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/siliconflow/BizyAir/blob/master/docs/kolors/introduce.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/siliconflow/BizyAir/blob/master/docs/controlnet-preprocessor/introduce.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="kolors">Kolors<a class="headerlink" href="#kolors" title="Permanent link">&para;</a></h1>
-<p>Kolors is a large-scale text-to-image generation model based on latent diffusion, developed by the Kuaishou Kolors team.</p>
-<p>You can find more about Kolors at <a href="https://huggingface.co/Kwai-Kolors/Kolors">Kwai-Kolors/Kolors</a>.</p>
-<p>BizyAir offers 5 nodes related to Kolors, each serving for:</p>
+                <h1 id="bizyair-controlnet-auxiliary-preprocessors">BizyAir ControlNet Auxiliary Preprocessors<a class="headerlink" href="#bizyair-controlnet-auxiliary-preprocessors" title="Permanent link">&para;</a></h1>
+<p>In the workflow of ControlNet, it is usually necessary to have image preprocessing nodes to convert images into Image Prompt that the ControlNet network can use.</p>
+<p>BizyAir offers more than 20 ControlNet preprocessing nodes.</p>
+<p><img alt="" src="imgs/bizyair_controlnet_preprocessors.png" /></p>
+<p>They have the following categories.</p>
+<h2 id="line-extractors">Line Extractors<a class="headerlink" href="#line-extractors" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Kolors Sampler</li>
-<li>Text encoding</li>
-<li>VAE decoding</li>
-<li>VAE encoding</li>
+<li>☁️BizyAir PiDiNet Soft-Edge Lines</li>
+<li>☁️BizyAir Canny Edge</li>
+<li>☁️BizyAir Binary Lines</li>
+<li>☁️BizyAir Scribble Lines</li>
+<li>☁️BizyAir M-LSD Lines</li>
+<li>☁️BizyAir HED Soft-Edge Lines</li>
+<li>☁️BizyAir Fake Scribble Lines (aka scribble_hed)</li>
+<li>☁️BizyAir Realistic Lineart"</li>
 </ul>
-<p>Here is an example of a text-to-image workflow using Kolors:</p>
-<p><img alt="" src="imgs/bizyair_kolors_txt2img.png" /></p>
-<p>Here is an example of a image-to-image workflow using Kolors:</p>
-<p><img alt="" src="imgs/bizyair_kolors_img2img.png" /></p>
-<p>The nodes provided by BizyAir are compatible with the nodes provided by <a href="https://github.com/kijai/ComfyUI-KwaiKolorsWrapper">ComfyUI-KwaiKolorsWrapper</a> , allowing you to freely combine them.</p>
-<p>Enjoy.</p>
+<h2 id="t2i-adapter-only">T2I-Adapter Only<a class="headerlink" href="#t2i-adapter-only" title="Permanent link">&para;</a></h2>
+<ul>
+<li>BizyAirColorPreprocessor": "☁️BizyAir Color Pallete</li>
+</ul>
+<h2 id="semantic-segmentation">Semantic Segmentation<a class="headerlink" href="#semantic-segmentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>☁️BizyAir UniFormer Segmentor</li>
+<li>☁️BizyAir OneFormer COCO Segmentor</li>
+<li>☁️BizyAir OneFormer ADE20K Segmentor</li>
+<li>☁️BizyAir SAM Segmentor</li>
+</ul>
+<h2 id="normal-and-depth-estimators">Normal and Depth Estimators<a class="headerlink" href="#normal-and-depth-estimators" title="Permanent link">&para;</a></h2>
+<ul>
+<li>☁️BizyAir Zoe Depth Map</li>
+<li>☁️BizyAir MiDaS Normal Map</li>
+<li>☁️BizyAir MiDaS Depth Map</li>
+<li>☁️BizyAir LeReS Depth Map (enable boost for leres++)</li>
+<li>☁️BizyAir BAE Normal Map</li>
+<li>☁️BizyAir Depth Anything V2 - Relative</li>
+<li>☁️BizyAir Metric3D Depth Map</li>
+<li>☁️BizyAir Metric3D Normal Map</li>
+</ul>
+<h2 id="face-and-pose-estimators">Face and Pose Estimators<a class="headerlink" href="#face-and-pose-estimators" title="Permanent link">&para;</a></h2>
+<ul>
+<li>☁️BizyAir OpenPose Pose</li>
+<li>☁️BizyAir DWPose Estimator</li>
+</ul>
+<h2 id="tile">Tile<a class="headerlink" href="#tile" title="Permanent link">&para;</a></h2>
+<ul>
+<li>☁️BizyAir Tile</li>
+</ul>
                 
               
               
@@ -445,41 +514,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../getting-started/quick-start.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Quick Start" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              Quick Start
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../others/index.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Others" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Others
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
