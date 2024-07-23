@@ -444,6 +444,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parameter-explanation" class="md-nav__link">
+    Parameter Explanation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -530,6 +537,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parameter-explanation" class="md-nav__link">
+    Parameter Explanation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -560,6 +574,22 @@
 <p>Click the provided link above to get it.</p>
 </div>
 <p>Looking forward to sharing more of your creative uses, enjoy!</p>
+<h2 id="parameter-explanation">Parameter Explanation<a class="headerlink" href="#parameter-explanation" title="Permanent link">&para;</a></h2>
+<p>Here are 6 types of inputs, each corresponding to a specific type of ControlNet control image, and they are all of the <code>IMAGE</code> type.</p>
+<ul>
+<li>openpose_image</li>
+<li>depth_image</li>
+<li>hed_pidi_scribble_ted_image</li>
+<li>canny_lineart_anime_lineart_mlsd_image</li>
+<li>normal_image</li>
+<li>segment_image</li>
+</ul>
+<p>If you are unsure how to obtain such images, you can use the <a href="../controlnet-preprocessor/introduce.html">BizyAir ControlNet Preprocessor</a> to generate them. You can use one or more control images simultaneously, for example, connecting both <code>openpose_image</code> and <code>depth_image</code>. However, from a practical view, it is not recommended to connect more than two control images simultaneously.</p>
+<p><code>prompt</code> and <code>negative_prompt</code> correspond to the positive and negative prompts, respectively.</p>
+<ul>
+<li>A higher value for <code>guidance_scale</code> results in images that more closely follow the input prompt.</li>
+</ul>
+<p><code>control_guidance_start</code> and <code>control_guidance_end</code> are values between 0 and 1. They indicate the proportion of the total steps during which ControlNet is applied. For example, if the total number of steps is set to 20, and <code>control_guidance_start=0</code>, <code>control_guidance_end=0.5</code>, only the first 10 steps will be influenced by the control image.</p>
                 
               
               
