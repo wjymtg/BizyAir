@@ -212,6 +212,18 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="../ksampler/introduce.html" class="md-tabs__link">
+      KSampler
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
   
   
   
@@ -385,18 +397,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../ksampler/introduce.html" class="md-nav__link">
+        KSampler
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_4">
+      <label class="md-nav__link" for="__nav_5">
         Controlnet
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Controlnet" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Controlnet
         </label>
@@ -509,18 +536,20 @@
                 <h1 id="kolors">Kolors<a class="headerlink" href="#kolors" title="Permanent link">&para;</a></h1>
 <p>Kolors is a large-scale text-to-image generation model based on latent diffusion, developed by the Kuaishou Kolors team.</p>
 <p>You can find more about Kolors at <a href="https://huggingface.co/Kwai-Kolors/Kolors">Kwai-Kolors/Kolors</a>.</p>
-<p>BizyAir offers 5 nodes related to Kolors, each serving for:</p>
-<ul>
-<li>Kolors Sampler</li>
-<li>Text encoding</li>
-<li>VAE decoding</li>
-<li>VAE encoding</li>
-</ul>
+<p>All the specific Kolors related nodes are placed in the category "☁️BizyAir/Kolors". They can be used with the generic nodes such as  "☁️BizyAir KSampler" and "☁️BizyAir VAE Decode" and so on.</p>
 <p>Here is an example of a text-to-image workflow using Kolors:</p>
 <p><img alt="" src="imgs/bizyair_kolors_txt2img.png" /></p>
-<p>Here is an example of a image-to-image workflow using Kolors:</p>
-<p><img alt="" src="imgs/bizyair_kolors_img2img.png" /></p>
-<p>The nodes provided by BizyAir are compatible with the nodes provided by <a href="https://github.com/kijai/ComfyUI-KwaiKolorsWrapper">ComfyUI-KwaiKolorsWrapper</a> , allowing you to freely combine them.</p>
+<p>Here is an example of a depth controlnet image-to-image workflow using Kolors:</p>
+<p><img alt="" src="imgs/bizyair_kolors_controlnet_depth.png" /></p>
+<p>You can alose use the canny controlnet with kolors:</p>
+<p><img alt="" src="imgs/bizyair_kolors_controlnet_canny.png" /></p>
+<p>Here is an example of inpainting workflow using Kolors. We mask the cat and change it to a dog:</p>
+<p><img alt="" src="imgs/bizyair_kolors_inpainting.png" /></p>
+<p>Here is an example of IPAdapter workflow using Kolors:</p>
+<p><img alt="" src="imgs/bizyair_kolors_ipadapter.png" /></p>
+<p>The nodes provided by BizyAir are compatible with the nodes provided by <a href="https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ">MinusZoneAI
+/
+ComfyUI-Kolors-MZ</a> , allowing you to freely combine them.</p>
 <p>Enjoy.</p>
                 
               

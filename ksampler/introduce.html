@@ -18,7 +18,7 @@
     
     
       
-        <title>Introduce - BizyAir Nodes</title>
+        <title>KSampler - BizyAir Nodes</title>
       
     
     
@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#bizyair-ksampler-and-its-supporting-infrastructure" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduce
+              KSampler
             
           </span>
         </div>
@@ -198,6 +203,20 @@
   <li class="md-tabs__item">
     <a href="../ai-assistants/introduce.html" class="md-tabs__link">
       AI Assistant
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="introduce.html" class="md-tabs__link md-tabs__link--active">
+      KSampler
     </a>
   </li>
 
@@ -377,19 +396,102 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          KSampler
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduce.html" class="md-nav__link md-nav__link--active">
+        KSampler
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bizyair-ksampler" class="md-nav__link">
+    ☁️BizyAir KSampler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loaders" class="md-nav__link">
+    Loaders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning-nodes" class="md-nav__link">
+    Conditioning Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipadapter" class="md-nav__link">
+    IPAdapter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latent-encode-and-decode" class="md-nav__link">
+    Latent Encode and Decode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_4">
+      <label class="md-nav__link" for="__nav_5">
         Controlnet
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Controlnet" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Controlnet
         </label>
@@ -462,6 +564,66 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bizyair-ksampler" class="md-nav__link">
+    ☁️BizyAir KSampler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loaders" class="md-nav__link">
+    Loaders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning-nodes" class="md-nav__link">
+    Conditioning Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipadapter" class="md-nav__link">
+    IPAdapter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latent-encode-and-decode" class="md-nav__link">
+    Latent Encode and Decode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -472,9 +634,50 @@
                   </a>
                 
                 
-                  <h1>Introduce</h1>
-                
-                
+                <h1 id="bizyair-ksampler-and-its-supporting-infrastructure">☁️BizyAir KSampler and Its Supporting Infrastructure.<a class="headerlink" href="#bizyair-ksampler-and-its-supporting-infrastructure" title="Permanent link">&para;</a></h1>
+<p>In BizyAir, there is a KSampler node provided along with other matching nodes.
+ These can handle tasks such as text to image, image to image, inpainting, outpainting, LoRA, ControlNet, IPAdapter, and more.</p>
+<p>Utilizing cloud resources, there is no need to download models or use local graphics cards, yet the usage habits remain consistent with the native ComfyUI.</p>
+<h2 id="bizyair-ksampler">☁️BizyAir KSampler<a class="headerlink" href="#bizyair-ksampler" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="imgs/bizyair-ksampler.png" /></p>
+<ul>
+<li>positive: the positive prompt</li>
+<li>negative: the negative prompt</li>
+<li>latent_image: the latent of the input image, it also can be a empty latent created by "Empty Latent Node"</li>
+<li>seed: when the seed doesn't change, the output image will remain the same</li>
+<li>control_after_generate: whether the seed needs to be changed after each wokflow running</li>
+<li>steps: the sampling steps, the more steps, the more time it will take to generate a image</li>
+<li>cfg:  a higher cfg value will result in output images that are closer to the input prompt, while a lower cfg value will lead to more creative results</li>
+<li>denoise: the strength during the sampling process</li>
+</ul>
+<h2 id="loaders">Loaders<a class="headerlink" href="#loaders" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="imgs/bizyair-loaders.png" /></p>
+<p>In the category "☁️BizyAir/loaders", you can see the loaders matching "☁️BizyAir KSampler". There are:</p>
+<ul>
+<li>☁️BizyAir Load Checkpoint</li>
+<li>☁️BizyAir Load LoRA</li>
+<li>☁️BizyAir Load ControlNet Model</li>
+<li>☁️BizyAir Load CLIP Vision</li>
+<li>☁️BizyAir Load VAE</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, local models cannot be used in BizyAir. In the future, we will introduce a feature for uploading local models.</p>
+</div>
+<h2 id="conditioning-nodes">Conditioning Nodes<a class="headerlink" href="#conditioning-nodes" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="imgs/bizyair-conditioning.png" /></p>
+<p>In the category "☁️BizyAir/conditioning", you can see the nodes controling the output image conditions. There are 1 node for text encoding and two nodes for applying controlnet.</p>
+<h2 id="ipadapter">IPAdapter<a class="headerlink" href="#ipadapter" title="Permanent link">&para;</a></h2>
+<p>In the category "☁️BizyAir/ipadapter", you can see the nodes about IPAdapter. Its usage is consistent with <a href="https://github.com/cubiq/ComfyUI_IPAdapter_plus">cubiq/ComfyUI_IPAdapter_plus</a>.</p>
+<p><img alt="" src="imgs/bizyair-ipadapter.jpg" /></p>
+<h2 id="latent-encode-and-decode">Latent Encode and Decode<a class="headerlink" href="#latent-encode-and-decode" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="imgs/bizyair-latent.png" /></p>
+<p>In the category "☁️BizyAir/latent", you can see the nodes working with latent. There are:</p>
+<ul>
+<li>☁️BizyAir VAE Decode: convert the latent to image</li>
+<li>☁️BizyAir VAE Encode: convert the image to latent</li>
+<li>☁️BizyAir VAE Encode(for Inpainting): used with the mask for inpainting</li>
+</ul>
                 
               
               
@@ -495,6 +698,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ai-assistants/introduce.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: AI Assistant" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              AI Assistant
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../controlnet-union/introduce.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Controlnet Union" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Controlnet Union
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
