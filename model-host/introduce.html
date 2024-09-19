@@ -686,16 +686,23 @@
 </div>
 <p>用户可以在 ComfyUI 中上传模型，也可以使用命令行工具上传模型。</p>
 <h2 id="comfyui">在 ComfyUI 中上传模型<a class="headerlink" href="#comfyui" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>ComfyUI 默认传输数据大小为 100MB，建议启动时，将最大值设置大一些，如 <code>python main.py --max-upload-size 1000</code> 设置最大上传数据为 1000MB。</p>
-</div>
-<p>点击 BizyAir 的 "Model" 按钮，可以打开模型对话框。</p>
-<p><img alt="" src="imgs/modelbtn.jpg" /></p>
+<p>点击 BizyAir 的 "Model" 按钮，有 "Remote Folders" 和 "Upload" 两个菜单选项。</p>
+<p>分别对应了已经上传的模型和上传模型功能。</p>
+<p><img alt="" src="imgs/modelsmenu.png" /></p>
 <p>在 “Remote Folders” 中可以查看已经上传的模型。</p>
-<p><img alt="" src="imgs/remotefolders.jpg" /></p>
+<p><img alt="" src="imgs/remotefolders.png" /></p>
+<ul>
+<li>点击 "垃圾桶" 图标可以删除上传的模型</li>
+<li>Status 为 "Avaliable" 的模型，表示已经可以在推理中使用。</li>
+</ul>
 <p>在 “Upload” 中可以上传模型。</p>
-<p><img alt="" src="imgs/uploadfiles.jpg" /></p>
+<p><img alt="" src="imgs/uploadfiles.png" /></p>
+<p>其中：</p>
+<ul>
+<li>Type 选择类型（当前只支持 “lora”）</li>
+<li>Name 是远程目录的名字，如果与已经上传的远程模型重名，将会覆盖已有的远程模型</li>
+<li>Local Path 是本地需要上传目录的 <strong>绝对路径</strong>。如果你是 Linux/Mac 用户，它看上去应该是 "/yourpath/xxxx"，如果你是 Windows 用户，它看上去应该是 "C:\yourpath\xxxx"。</li>
+</ul>
 <h2 id="siliconcloud-client">使用 SiliconCloud Client 上传模型<a class="headerlink" href="#siliconcloud-client" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -723,7 +730,7 @@
 </ul>
 <h2 id="_3">使用上传的模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>当模型的状态显示为 “Available” 时，表示模型已经可以在 BizyAir 工作流中使用。</p>
-<p><img alt="" src="imgs/model-ready.jpg" /></p>
+<p><img alt="" src="imgs/remotefolders.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>上传的模型，即使完成后，也需要一定时间才能在 BizyAir 中使用，一般为 20~30 分钟。如果状态不为 “Available”，请稍等片刻。</p>
