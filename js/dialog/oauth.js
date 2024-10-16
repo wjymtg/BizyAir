@@ -8,7 +8,8 @@ export const openOAuthPopup = async (setKey) => {
       if (event.data.length > 0 && event.data[0]['secretKey'] !== undefined) {
           setKey(event.data[0]['secretKey']);
       }
+      // close this window ASAP, because the page looks so primitive
+      // you might want to change when the window should be closed if you have a fancy UI
       popup.close();
   });
-  window.postMessage
 }
