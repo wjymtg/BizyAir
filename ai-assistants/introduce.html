@@ -474,6 +474,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bizyair-joy-caption2" class="md-nav__link">
+    ☁️BizyAir Joy Caption2
+  </a>
+  
+    <nav class="md-nav" aria-label="☁️BizyAir Joy Caption2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_2" class="md-nav__link">
+    Key Features:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -705,6 +725,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bizyair-joy-caption2" class="md-nav__link">
+    ☁️BizyAir Joy Caption2
+  </a>
+  
+    <nav class="md-nav" aria-label="☁️BizyAir Joy Caption2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_2" class="md-nav__link">
+    Key Features:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -764,6 +804,89 @@
 <p><img alt="" src="imgs/siliconcloud-vlm-api.jpeg" /></p>
 <h2 id="bizyair-joy-caption">☁️BizyAir Joy Caption<a class="headerlink" href="#bizyair-joy-caption" title="Permanent link">&para;</a></h2>
 <p>The ☁️BizyAir Joy Caption node is a powerful tool designed to automatically generate descriptive captions for images, thanks to <a href="https://huggingface.co/spaces/fancyfeast/joy-caption-pre-alpha">https://huggingface.co/spaces/fancyfeast/joy-caption-pre-alpha</a>.</p>
+<h2 id="bizyair-joy-caption2">☁️BizyAir Joy Caption2<a class="headerlink" href="#bizyair-joy-caption2" title="Permanent link">&para;</a></h2>
+<p>The ☁️BizyAir Joy Caption2 node is an upgraded version of ☁️BizyAir Joy Caption node, thanks to <a href="https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two">https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two</a>.</p>
+<h3 id="key-features_2">Key Features:<a class="headerlink" href="#key-features_2" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="imgs/siliconcloud-joycaption2-api.png" /></p>
+<ol>
+<li>
+<p><strong>do_sample</strong>: The do_sample parameter determines whether the model uses a random sampling method to generate the next word, or simply selects the most likely word.</p>
+<ul>
+<li>
+<p><code>do_sample=True</code>: It can increased variety and creativity of generated text.</p>
+</li>
+<li>
+<p><code>do_sample=False</code>: The next word with the highest probability will be selected, and the content of the article will be conservative.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>temperature</strong>: The temperature parameter affects the shape of the probability distribution when sampling, and thus the variety of generated text.</p>
+<ul>
+<li>
+<p>A higher temperature will make the distribution more uniform and increase randomness.</p>
+</li>
+<li>
+<p>A lower temperature makes the distribution sharper, less random, and more inclined to choose words with higher probability.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>max_tokens</strong>: The max_tokens parameter specifies the maximum number of tokens that the model can generate when generating text. The upper limit here is 512.</p>
+</li>
+<li>
+<p><strong>caption_type</strong>: Each caption_type corresponds to the default system prompts.</p>
+<p><img alt="" src="imgs/siliconcloud-joycaption2-caption_type.png" /></p>
+<ul>
+<li>
+<p><strong>Descriptive</strong>: Write a descriptive caption for this image in a formal tone.</p>
+</li>
+<li>
+<p><strong>Descriptive (Informal)</strong>: Write a descriptive caption for this image in a casual tone.</p>
+</li>
+<li>
+<p><strong>Training Prompt</strong>: Write a stable diffusion prompt for this image.</p>
+</li>
+<li>
+<p><strong>MidJourney</strong>: Write a MidJourney prompt for this image.</p>
+</li>
+<li>
+<p><strong>Booru tag list</strong>: Write a list of Booru tags for this image.</p>
+</li>
+<li>
+<p><strong>Booru-like tag list</strong>: Write a list of Booru-like tags for this image.</p>
+</li>
+<li>
+<p><strong>Art Critic</strong>: Analyze this image like an art critic would with information about its composition, style, symbolism, the use of color, light, any artistic movement it might belong to, etc.</p>
+</li>
+<li>
+<p><strong>Product Listing</strong>: Write a caption for this image as though it were a product listing.</p>
+</li>
+<li>
+<p><strong>Social Media Post</strong>: Write a caption for this image as if it were being used for a social media post.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>caption_length</strong>: The caption_length parameter is the length of the output. If the max_tokens parameter is less than it, the output will be truncated.</p>
+</li>
+<li>
+<p><strong>extra_options</strong>: If you want to add more prompts to the default prompts, you can write here.</p>
+<ul>
+<li>For example, if you want to describe the person in the picture as someone, you can write as follow: <code>If there is a person/character in the image you must refer to them as {name}.</code></li>
+</ul>
+</li>
+<li>
+<p><strong>name_input</strong>: The name in the <em>name_input</em> can replace the <code>{name}</code> in the <em>extra_options</em>.</p>
+<ul>
+<li>For example, you write <code>Jack</code> here and write <code>If there is a person/character in the image you must refer to them as {name}.</code> in the <em>extra_options</em>, it will be found that the person in the image is named as Jack in the output.</li>
+</ul>
+<p><img alt="" src="imgs/siliconcloud-joycaption2-example.png" /></p>
+</li>
+<li>
+<p><strong>custom_prompt</strong>: If you want to customize the prompts, you can write here to override the prompts and previous actions related to the prompts(<em>caption_type</em>, <em>extra_options</em> and <em>extra_options</em>) will be invalid.</p>
+</li>
+</ol>
                 
               
               
