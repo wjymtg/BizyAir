@@ -6,3 +6,7 @@ __pycache__/
 venv/
 *.log
 api_key.ini
+
+browser_tests/test-results/
+browser_tests/playwright-report/
+browser_tests/node_modules/
