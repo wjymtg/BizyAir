@@ -2,7 +2,7 @@
 name: Browser Tests
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   schedule:
     - cron: '0 6 * * *'
   # run on PR to master
