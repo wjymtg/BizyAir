@@ -37,7 +37,10 @@ import { expect, test } from '@playwright/test';
         await page.goto('http://localhost:8188/')
         await page.waitForTimeout(500)
         await page.locator('.workflows-tab-button').click()
-        await page.getByText('EmptyWorkflow.json').click()
+        await page.locator('.comfyui-workflows-browse .node-label', {
+          hasText: "EmptyWorkflow.json"
+        }).click()
+        await page.waitForTimeout(500)
         await page.locator('#graph-canvas').dblclick({
           position: {
             x: 600,
