@@ -8,14 +8,20 @@ on:
   # TODO: more proper trigger
 
 jobs:
-  browser_tests:
+  update_browser_expectations:
     runs-on: ubuntu-latest
     steps:
+      # Ref: https://github.com/orgs/community/discussions/25199#discussioncomment-3246802
+      - name: Get latest ComfyUIrelease with tag
+        id: latestrelease
+        run: |
+          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+
       - name: Checkout ComfyUI
         uses: actions/checkout@v4
         with:
           name: comfyanonymous/ComfyUI
-          ref: refs/heads/release
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
           path: ComfyUI
 
       - name: Checkout BizyAir
