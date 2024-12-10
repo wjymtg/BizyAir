@@ -1,6 +1,11 @@
 # Inspired by: https://github.com/Comfy-Org/ComfyUI_frontend/blob/57701f6145f622bf17237410c165966fb4aecc75/.github/workflows/test-browser-exp.yaml
 name: Update Browser Tests Expectations
 
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+  # TODO: more proper trigger
+
 jobs:
   browser_tests:
     runs-on: ubuntu-latest
