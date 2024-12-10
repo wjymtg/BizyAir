@@ -60,8 +60,8 @@ jobs:
               
       - name: Copy over test workflows
         run: |
-          mkdir -p ComfyUI/user/default/workflows
-          cp -r ComfyUI/custom_nodes/BizyAir/browser_tests/workflows ComfyUI/user/default/workflows
+          mkdir -p ComfyUI/user/default
+          cp -r ComfyUI/custom_nodes/BizyAir/browser_tests/workflows ComfyUI/user/default
       
       - name: Start ComfyUI server
         run: |
