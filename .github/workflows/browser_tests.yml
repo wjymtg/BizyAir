@@ -3,9 +3,9 @@ name: Browser Tests
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - master
+  push:
+    branches:
+      - master
   # TODO: when bizyair_frontend is ready, change to push and PR to dev_bbs
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Ref: https://github.com/orgs/community/discussions/25199#discussioncomment-3246802
-      - name: Get latest ComfyUIrelease with tag
+      - name: Get latest ComfyUI release with tag
         id: latestrelease
         run: |
           echo "comfy_latest_release=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | jq '.tag_name' | sed 's/\"//g')" >> $GITHUB_OUTPUT
@@ -28,7 +28,7 @@ jobs:
       - name: Checkout BizyAir
         uses: actions/checkout@v4
         with:
-          repository: wjymtg/BizyAir
+          repository: siliconflow/BizyAir
           ref: master
           path: ComfyUI/custom_nodes/BizyAir
 

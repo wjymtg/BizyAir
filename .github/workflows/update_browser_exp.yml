@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Ref: https://github.com/orgs/community/discussions/25199#discussioncomment-3246802
-      - name: Get latest ComfyUIrelease with tag
+      - name: Get latest ComfyUI release with tag
         id: latestrelease
         run: |
           echo "comfy_latest_release=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | jq '.tag_name' | sed 's/\"//g')" >> $GITHUB_OUTPUT
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout BizyAir
         uses: actions/checkout@v4
         with:
-          repository: wjymtg/BizyAir
+          repository: siliconflow/BizyAir
           ref: master
           path: ComfyUI/custom_nodes/BizyAir
 
@@ -105,6 +105,7 @@ jobs:
 
       # TODO: if need to support PR, refer to https://github.com/Comfy-Org/ComfyUI_frontend/blob/57701f6145f622bf17237410c165966fb4aecc75/.github/workflows/test-browser-exp.yaml
       - name: Commit updated expectations
+        continue-on-error: true
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
