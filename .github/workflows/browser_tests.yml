@@ -79,7 +79,7 @@ jobs:
       
       - name: Update bizyair_frontend.js
         run: |
-          npx vite-tsc -b
+          npx vue-tsc -b
           npx vite build
         working-directory: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
 
