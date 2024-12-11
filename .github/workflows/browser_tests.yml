@@ -28,7 +28,7 @@ jobs:
       - name: Checkout BizyAir
         uses: actions/checkout@v4
         with:
-          repository: siliconflow/BizyAir
+          repository: wjymtg/BizyAir
           ref: master
           path: ComfyUI/custom_nodes/BizyAir
 
