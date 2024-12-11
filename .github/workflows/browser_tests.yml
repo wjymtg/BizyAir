@@ -3,9 +3,10 @@ name: Browser Tests
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 6 * * *'
-  # run on PR to master
+  #push:
+  #  branches:
+  #    - master
+  # TODO: when bizyair_frontend is ready, change to push and PR to dev_bbs
 
 jobs:
   browser_tests:
@@ -78,7 +79,8 @@ jobs:
       
       - name: Update bizyair_frontend.js
         run: |
-          npm run dev
+          npx vite-tsc -b
+          npx vite build
         working-directory: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
 
       - name: Start ComfyUI server

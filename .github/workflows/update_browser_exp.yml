@@ -3,10 +3,6 @@ name: Update Browser Tests Expectations
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - master
-  # TODO: when bizyair_frontend is ready, change to push to dev_bbs
 
 jobs:
   update_browser_expectations:
@@ -79,7 +75,8 @@ jobs:
       
       - name: Update bizyair_frontend.js
         run: |
-          npm run dev
+          npx vue-tsc -b
+          npx vite build
         working-directory: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
 
       - name: Start ComfyUI server
