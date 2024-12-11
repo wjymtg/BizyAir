@@ -3,9 +3,10 @@ name: Update Browser Tests Expectations
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 6 1 * *'
-  # TODO: more proper trigger
+  #push:
+  #  branches:
+  #    - master
+  # TODO: when bizyair_frontend is ready, change to push to dev_bbs
 
 jobs:
   update_browser_expectations:
@@ -31,6 +32,13 @@ jobs:
           ref: master
           path: ComfyUI/custom_nodes/BizyAir
 
+      - name: Checkout bizyair_frontend
+        uses: actions/checkout@v4
+        with:
+          repository: siliconflow/bizyair_frontend
+          ref: dev_bbs
+          path: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.12'
@@ -45,6 +53,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             ComfyUI/custom_nodes/BizyAir/browser_tests/package-lock.json
+            ComfyUI/custom_nodes/BizyAir/bizyair_frontend/package-lock.json
 
       - name: Install dependencies
         run: |
@@ -57,12 +66,22 @@ jobs:
           npm install
           npx playwright install chromium --with-deps
         working-directory: ComfyUI/custom_nodes/BizyAir/browser_tests
+
+      - name: Install bizyair_frontend dependencies
+        run: |
+          npm install
+        working-directory: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
               
       - name: Copy over test workflows
         run: |
           mkdir -p ComfyUI/user/default
           cp -r ComfyUI/custom_nodes/BizyAir/browser_tests/workflows ComfyUI/user/default
       
+      - name: Update bizyair_frontend.js
+        run: |
+          npm run dev
+        working-directory: ComfyUI/custom_nodes/BizyAir/bizyair_frontend
+
       - name: Start ComfyUI server
         run: |
           python main.py --cpu &
