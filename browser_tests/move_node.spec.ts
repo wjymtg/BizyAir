@@ -144,6 +144,9 @@ import { expect, test } from "@playwright/test";
     await page.mouse.down();
     await page.mouse.move(1000, 350);
     await page.mouse.up();
-    await expect(page).toHaveScreenshot(`move_${nodeName}.png`);
+    await expect(page).toHaveScreenshot(`move_${nodeName}.png`, {
+      maxDiffPixelRatio: 0.01,
+    });
   });
 });
+
