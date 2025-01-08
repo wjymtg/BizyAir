@@ -1,11 +1,18 @@
-import asyncio
+import hashlib
 import json
 import pprint
+import time
 import urllib.error
 import urllib.request
 import warnings
+from abc import ABC, abstractmethod
+from collections import defaultdict
+from typing import Any, Union
 
 import aiohttp
+import comfy
+
+from bizyair.common.caching import CacheManager
 
 __all__ = ["send_request"]
 
@@ -49,7 +56,6 @@ def validate_api_key(api_key: str = None) -> bool:
     api_key_state.current_api_key = api_key
     url = f"{BIZYAIR_SERVER_ADDRESS}/user/info"
     headers = {"accept": "application/json", "authorization": f"Bearer {api_key}"}
-
     try:
         response_data = send_request(
             method="GET", url=url, headers=headers, callback=None
@@ -59,9 +65,15 @@ def validate_api_key(api_key: str = None) -> bool:
             print(f"\033[91mAPI key validation failed. API Key: {api_key}\033[0m")
         else:
             api_key_state.is_valid = True
+    except ConnectionError as ce:
+        api_key_state.is_valid = False
+        print(f"\033[91mConnection error: {ce}\033[0m")
+    except PermissionError as pe:
+        api_key_state.is_valid = False
+        print(f"\033[91mError validating API key: {api_key}, error: {pe}\033[0m")
     except Exception as e:
         api_key_state.is_valid = False
-        print(f"\033[91mError validating API key: {api_key}, error: {e}\033[0m")
+        print(f"\033[91mOther error: {e}\033[0m")
     return api_key_state.is_valid
 
 
@@ -106,8 +118,10 @@ def send_request(
     data: bytes = None,
     verbose=False,
     callback: callable = process_response_data,
+    response_handler: callable = json.loads,
+    cache_manager: CacheManager = None,
     **kwargs,
-) -> dict:
+) -> Union[dict, Any]:
     try:
         headers = kwargs.pop("headers") if "headers" in kwargs else _headers()
         headers["User-Agent"] = "BizyAir Client"
@@ -133,9 +147,11 @@ def send_request(
                 + "Also, verify your network settings and disable any proxies if necessary.\n"
                 + "After checking, please restart the ComfyUI service."
             )
+    if response_handler:
+        response_data = response_handler(response_data)
     if callback:
-        return callback(json.loads(response_data))
-    return json.loads(response_data)
+        return callback(response_data)
+    return response_data
 
 
 async def async_send_request(
